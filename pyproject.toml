@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "livedict"
+version = "1.0.0"
+description = "Encrypted TTL-based key-value store with sandboxed hooks and optional Redis support."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E*"] 
+authors = [
+    { name = "Hemanshu Vaidya", email = "hemanshuvaidya64@gmail.com" }
+]
+dependencies = [
+    "cryptography>=3.4",
+    "redis>=4.0"
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/hemanshu03/LiveDict"
+Source = "https://github.com/hemanshu03/LiveDict"
+Issues = "https://github.com/hemanshu03/LiveDict/issues"

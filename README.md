@@ -12,5 +12,12 @@ Encrypted, TTL-based in-memory dictionary with optional Redis persistence and sa
 
 ## Installation
 
+PyPI (Yet to be launched here..):
 ```bash
-pip install livedict
+pip install ... (livedict)
+```
+
+TestPyPI (Is available here):
+```bash
+pip install -i https://test.pypi.org/simple/ livedict==1.0.0
+```
