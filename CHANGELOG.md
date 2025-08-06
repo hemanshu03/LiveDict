@@ -29,5 +29,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * **_Thread stability:_** Minor locking improvements to avoid missed wakeups during expiry checks.
 
----
-
