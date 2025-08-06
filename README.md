@@ -1,6 +1,4 @@
 
----
-
 # LiveDict
 
 # Encrypted, TTL-based, Persistent Python Dictionary with Hook Callbacks
@@ -315,5 +313,3 @@ val = await ald.aget("key")
 
 * `redis>=4.2` (already there, supports `redis.asyncio`).
 * No extra deps (asyncio is stdlib).
-
----
