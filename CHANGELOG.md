@@ -28,4 +28,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **_Sandbox hook timeout behavior:_** **_SandboxTimeout now properly propagates_** during on_access hook execution. **_Other hook errors are logged_** but do not interrupt normal operations.
 
 * **_Thread stability:_** Minor locking improvements to avoid missed wakeups during expiry checks.
-
