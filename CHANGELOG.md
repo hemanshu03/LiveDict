@@ -57,5 +57,3 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - **Windows Limitations:**
   - Hooks must be defined at module top-level (due to `multiprocessing.spawn` pickling).
   - Memory-limiting for sandboxing is currently unsupported; timeout enforcement still applies.
-
----
