@@ -20,7 +20,7 @@ setup(
         "redis>=4.0"
     ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 1 - Alpha",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
