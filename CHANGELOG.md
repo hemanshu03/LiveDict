@@ -1,61 +1,33 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.  
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to this project will be documented in this file.
 
----
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-08-05
+## Patch Update for LiveDict: [v1.0.1] - 2025-08-06
 
 ### Added
-- **Core LiveDict implementation**
-  - Encrypted in-memory key-value store using AES-256-GCM.
-  - Per-key and default TTL (time-to-live) support.
-  - Automatic expiry management with background monitoring thread.
 
-- **Hooks System**
-  - Access hooks: executed on key retrieval.
-  - Expiry hooks: executed on key expiration.
-  - Sandboxed execution with configurable timeouts and memory limits.
+* **Comprehensive README.md**
 
-- **Redis Integration**
-  - Optional persistence and distributed storage via `redis-py`.
-  - TTL synchronization with Redis expiration system.
+  * Detailed usage instructions, quick start, and advanced examples.
+  * Security notes, performance tips, and API reference.
+  * Installation guidance for optional features (`msgpack`, `redis`).
 
-- **Security**
-  - AES-GCM encryption with auto-generated or custom keys.
-  - Isolation of hooks to prevent blocking or crashes in the main process.
+### Changed
 
-- **Thread Safety**
-  - Concurrent-safe `set`, `get`, and `delete` using locks and condition variables.
+* **_Expiry management:_** Migrated expiry tracking to **_heap queue (priority queue)_** for faster lookups and improved performance under heavy load.
 
-- **Cross-Platform Support**
-  - Works on Linux, macOS, and Windows (with Windows-specific sandbox limitations).
+* **_Enhanced LiveDict docstring:_** Added **_Quick Start_** and richer examples, matching the style of Python standard library docs.
 
-- **Documentation**
-  - Comprehensive inline docstrings for public API.
-  - Sphinx documentation templates in `docs/`.
-  - `README.md` with usage examples and installation instructions.
+* **_Improved inline documentation:_** Standardized parameter and return annotations for clarity.
 
-- **Packaging**
-  - `pyproject.toml` and `setup.py` for modern packaging and PyPI publishing.
-  - `tests/` directory with `pytest`-based test suite.
+* **_Redis handling fix:_** `get()` now gracefully handles invalid/foreign Redis values by returning None instead of raising decryption errors.
+
+* **_Sandbox hook timeout behavior:_** **_SandboxTimeout now properly propagates_** during on_access hook execution. **_Other hook errors are logged_** but do not interrupt normal operations.
+
+* **_Thread stability:_** Minor locking improvements to avoid missed wakeups during expiry checks.
 
 ---
 
-## [Unreleased]
-
-### Planned
-- Pluggable storage backends (SQLite, file-based).
-- Metrics/observability for hook executions and TTL events.
-- Windows-compatible memory limit enforcement.
-- Async/await API for asyncio-based applications.
-
----
-
-### Notes
-- **Windows Limitations:**
-  - Hooks must be defined at module top-level (due to `multiprocessing.spawn` pickling).
-  - Memory-limiting for sandboxing is currently unsupported; timeout enforcement still applies.
-
----
