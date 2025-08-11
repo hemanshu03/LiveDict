@@ -30,5 +30,5 @@ and this project follows Semantic Versioning.
 
 ---
 
-## Prior patch notes (v1.0.1 and earlier)
-See previous entries for historical or experimental changes.
+## Prior patch notes (v1.0.4 and earlier)
+No previous changes. This is the first version of LiveDict's official release.
