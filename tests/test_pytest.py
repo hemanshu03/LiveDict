@@ -31,7 +31,7 @@ import sqlite3
 import pytest
 from typing import Any, Dict
 
-from src import (
+from livedict import (
     LiveDict,
     AsyncLiveDict,
     LiveDictPresetBuilder,

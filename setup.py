@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="livedict",
-    version="1.0.0",
+    version="1.0.4",
     author="Hemanshu Vaidya",
     author_email="hemanshuvaidya64@gmail.com",
     description="Encrypted TTL-based key-value store with sandboxed hooks and optional persistence backends (SQLite/File/Redis).",

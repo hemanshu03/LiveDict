@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project follows Semantic Versioning.
 
-## Release: [v1.0.0] - 2025-08-11
+## Release: [v1.0.4] - 2025-08-11
 
 ### Added
 * Pydantic-based configuration models for storage/backends/monitoring and bucket policies.
@@ -20,7 +20,7 @@ and this project follows Semantic Versioning.
 * Expanded API and documentation covering rotation, hooks, and persistence options.
 
 ### Changed
-* Packaging bumped to `1.0.0-release` to mark the release-ready core implementation.
+* Packaging bumped to `1.0.4-release` to mark the release-ready core implementation.
 * README and packaging metadata updated to reflect new dependencies and features.
 
 ### Fixed
