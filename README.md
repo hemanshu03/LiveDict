@@ -4,6 +4,11 @@
 
 LiveDict is a secure, extensible, and ephemeral key-value store designed for applications that need in-memory caching with optional persistence and encryption.
 
+## License
+MIT License. © 2025 LiveDict. All rights reserved.
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
+
 ## Highlights
 * AES-GCM encryption (via `cryptography`) with a deterministic fallback for test environments.
 * TTL expiry driven by a heap-based monitor thread for efficient scheduling.
@@ -21,14 +26,9 @@ LiveDict is a secure, extensible, and ephemeral key-value store designed for app
 
 Minimum supported Python: 3.8+
 
-Install core dependencies:
+Install with:
 ```bash
-pip install pydantic cryptography redis typing-extensions
-```
-
-If you prefer to install via setup.py:
-```bash
-pip install .
+pip install livedict
 ```
 
 ---
@@ -36,7 +36,7 @@ pip install .
 ## Quick Start
 
 ```python
-from src.livedict.core import LiveDict, LiveDictConfig, SQLiteBackend, CipherAdapter
+from livedict import LiveDict, LiveDictConfig, SQLiteBackend, CipherAdapter
 
 # Create a sqlite backend and pass to LiveDict for persistence
 db = SQLiteBackend(dsn="sqlite:///livedict.db")
@@ -73,11 +73,6 @@ store.stop()  # stop the monitor thread cleanly
 ## Documentation
 See
   - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/1e93dbb91c8d4488a8fb9284974e82d23a2bd3a1/APIv1-0-0-release.md).
-  - [Documentation/s and more on Website](https://steady-concha-489355.netlify.app)
+  - [Documentation/s and more on Website](https://livedict.pages.dev/)
 
 
-## Contributing
-PRs and issues welcome. Please follow the repo's contribution and code style guidelines.
-
-## License
-MIT License

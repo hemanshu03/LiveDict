@@ -1,4 +1,4 @@
-# src/livedict/core.py
+# livedict/core.py
 """
 LiveDict is a lightweight encrypted ephemeral (TTL-based) key-value store with:
     - in-memory storage as the primary runtime store (fast),
