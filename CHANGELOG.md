@@ -3,28 +3,32 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project follows Semantic Versioning.
 
-## Patch Update for LiveDict: [v1.0.1] - 2025-08-06
+## Release: [v1.0.0] - 2025-08-11
 
 ### Added
-
-* **Comprehensive README.md**
-
-  * Detailed usage instructions, quick start, and advanced examples.
-  * Security notes, performance tips, and API reference.
-  * Installation guidance for optional features (`msgpack`, `redis`).
+* Pydantic-based configuration models for storage/backends/monitoring and bucket policies.
+* New persistence backends:
+  - SQLite backend with short-lived connections and indexing.
+  - File-backed object store for external object storage emulation.
+  - Improved InMemory backend used for testing and simple runs.
+* CipherAdapter with AES-GCM (cryptography) and deterministic base64 XOR fallback.
+* Heap-based expiry monitor with efficient wake-ups and rebuild heuristics.
+* Bucket semantics, bucket policies, and hybrid routing placeholders.
+* Better backend fallbacks and tolerant lookup behavior (any-bucket fallback for SQLite/File).
+* Expanded API and documentation covering rotation, hooks, and persistence options.
 
 ### Changed
+* Packaging bumped to `1.0.0-release` to mark the release-ready core implementation.
+* README and packaging metadata updated to reflect new dependencies and features.
 
-* **_Expiry management:_** Migrated expiry tracking to **_heap queue (priority queue)_** for faster lookups and improved performance under heavy load.
+### Fixed
+* Backend expiry handling improved to avoid stale reads.
+* sqlite backend uses short-lived sqlite3 connections to avoid file locks on Windows.
+* File backend tolerant lookup fixes and safer cleanup logic.
 
-* **_Enhanced LiveDict docstring:_** Added **_Quick Start_** and richer examples, matching the style of Python standard library docs.
+---
 
-* **_Improved inline documentation:_** Standardized parameter and return annotations for clarity.
-
-* **_Redis handling fix:_** `get()` now gracefully handles invalid/foreign Redis values by returning None instead of raising decryption errors.
-
-* **_Sandbox hook timeout behavior:_** **_SandboxTimeout now properly propagates_** during on_access hook execution. **_Other hook errors are logged_** but do not interrupt normal operations.
-
-* **_Thread stability:_** Minor locking improvements to avoid missed wakeups during expiry checks.
+## Prior patch notes (v1.0.1 and earlier)
+See previous entries for historical or experimental changes.
