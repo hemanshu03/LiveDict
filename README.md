@@ -1,4 +1,4 @@
-# LiveDict (Release v1.0.0)
+# LiveDict (Release v1.0.4)
 
 **Encrypted, TTL-based, Persistent Python Dictionary with Hook Callbacks**
 
@@ -72,7 +72,7 @@ store.stop()  # stop the monitor thread cleanly
 
 ## Documentation
 See
-  - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/1e93dbb91c8d4488a8fb9284974e82d23a2bd3a1/APIv1-0-0-release.md).
+  - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/1e93dbb91c8d4488a8fb9284974e82d23a2bd3a1/APIv1-0-4-release.md).
   - [Documentation/s and more on Website](https://livedict.pages.dev/)
 
 
