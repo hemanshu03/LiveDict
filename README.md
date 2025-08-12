@@ -99,4 +99,28 @@ Thanks for thinking about contributing! Please:
 ---
 
 If you find LiveDict useful and want to support continued development, consider sponsoring the project: https://github.com/sponsors/hemanshu03
+=======
+
+# About License:
+### SPDX-License-Identifier: MIT
+### Copyright (c) 2025 Hemanshu
+
+---
+
+# If you want to credit LiveDict in your docs/acknowledgements, this short line works:
+LiveDict - Encrypted TTL-based Python key-value store by [hemanshu03](https://github.com/hemanshu03). Find LiveDict on GitHub @[LiveDict](https://github.com/hemanshu03/LiveDict)
+
+---
+
+# Contributing to LiveDict
+
+Thanks for thinking about contributing! Please:
+
+* Open an issue first to discuss bigger changes.
+* Fork the repo, create a feature branch, submit with tests and docs.
+* Keep backward compatibility in mind; bump major/minor in `CHANGELOG.md` if needed.
+
+---
+
+If you find LiveDict useful and want to support continued development, consider sponsoring the project: https://github.com/sponsors/hemanshu03
 
