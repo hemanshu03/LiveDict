@@ -77,8 +77,9 @@ See:
 
 ---
 
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2025 Hemanshu
+# About License:
+### SPDX-License-Identifier: MIT
+### Copyright (c) 2025 Hemanshu
 
 ---
 
