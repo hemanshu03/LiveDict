@@ -62,7 +62,7 @@ store.stop()  # stop the monitor thread cleanly
 ### Persistence Backends
 * SQLiteBackend uses short-lived connections and has an any-bucket fallback lookup.
 * FileBackend stores entries as per-bucket small files with JSON metadata.
-* RedisBackend is a thin wrapper — `redis-py` required for full functionality.
+* RedisBackend is a thin wrapper — `core.py` required for full functionality.
 
 ### Configuration & Limits
 * Use pydantic `LiveDictConfig` to tune defaults, monitor behavior, and backend settings.
