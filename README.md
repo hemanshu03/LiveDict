@@ -72,7 +72,7 @@ store.stop()  # stop the monitor thread cleanly
 
 ## Documentation
 See:
-  - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/1e93dbb91c8d4488a8fb9284974e82d23a2bd3a1/LD1-0-4-release.md).
+  - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/45fa5c79fb225c8f9ea102595e57cbb1f83da8b6/LDv1-0-4-release.md).
   - [Documentation/s and more on Website](https://livedict.pages.dev/)
 
 ---
