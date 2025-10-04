@@ -1,13 +1,8 @@
 # LiveDict (Release v1.0.4)
 
-**Encrypted, TTL-based, Persistent Python Dictionary with Hook Callbacks**
+**TTL-based, (optionally) Persistent Python Dictionary with Hook Callbacks**
 
 LiveDict is a secure, extensible, and ephemeral key-value store designed for applications that need in-memory caching with optional persistence and encryption.
-
-## License
-MIT License. © 2025 LiveDict. All rights reserved.
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
 
 ## Highlights
 * AES-GCM encryption (via `cryptography`) with a deterministic fallback for test environments.
@@ -22,6 +17,27 @@ MIT License. © 2025 LiveDict. All rights reserved.
 
 ---
 
+# LiveDict (Release v2.0.0)
+
+LiveDict is a small utility library providing in-memory dictionary-like structures with
+synchronous and asynchronous variants, a sandbox module, and flexible storage backends.
+
+**Important changes in v2**
+- Cryptography removed: the package no longer performs encryption. Users must provide their own cryptographic handling.
+- Sandbox is active: behaves as implemented in `livedict/modules/sandbox.py`.
+
+## Sandbox usage
+
+Review `livedict/modules/sandbox.py` for details. The sandbox module is included and active;
+exercise caution and review its behavior before running untrusted code.
+
+---
+
+## License
+MIT License. © 2025 LiveDict. All rights reserved.
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
+
 ## Installation
 
 Minimum supported Python: 3.8+
@@ -31,49 +47,16 @@ Install with:
 pip install livedict
 ```
 
----
+## Demonstration
 
-## Quick Start
-
-```python
-from livedict import LiveDict, LiveDictConfig, SQLiteBackend, CipherAdapter
-
-# Create a sqlite backend and pass to LiveDict for persistence
-db = SQLiteBackend(dsn="sqlite:///livedict.db")
-cfg = LiveDictConfig()
-
-store = LiveDict(config=cfg, cipher=CipherAdapter(), backends={"sqlite": db})
-
-store.set("username", "alice", ttl=60)
-print(store.get("username"))  # -> 'alice'
-
-store.stop()  # stop the monitor thread cleanly
-```
+Visit [![testfile.py](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py)](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py) as a demonstration on how to use LiveDict.
 
 ---
 
-## Features & Notes
+## Contributing
 
-### Encryption
-* Uses AES-GCM when `cryptography` is available.
-* Fallback deterministic XOR + base64 if cryptography absent (useful for tests).
-* Keep the same CipherAdapter (or same keys) across restarts to decrypt persisted blobs.
-
-### Persistence Backends
-* SQLiteBackend uses short-lived connections and has an any-bucket fallback lookup.
-* FileBackend stores entries as per-bucket small files with JSON metadata.
-* RedisBackend is a thin wrapper — `redis-py` required for full functionality.
-
-### Configuration & Limits
-* Use pydantic `LiveDictConfig` to tune defaults, monitor behavior, and backend settings.
-* Memory limits and heap rebuild thresholds help avoid large memory usage.
-
----
-
-## Documentation
-See:
-  - [Documentation/s](https://github.com/hemanshu03/LiveDictDocumentations/blob/1e93dbb91c8d4488a8fb9284974e82d23a2bd3a1/LD1-0-4-release.md).
-  - [Documentation/s and more on Website](https://livedict.pages.dev/)
+- Generate documentation using your preferred tools (pdoc, Sphinx with napoleon for Google-style).
+- This release uses Google-style docstrings across the codebase.
 
 ---
 
@@ -84,7 +67,7 @@ See:
 ---
 
 ## If you want to credit LiveDict in your docs/acknowledgements, this short line works:
-LiveDict - Encrypted TTL-based Python key-value store by [hemanshu03](https://github.com/hemanshu03). Find LiveDict on GitHub @[LiveDict](https://github.com/hemanshu03/LiveDict)
+LiveDict - TTL-based Python key-value store by [hemanshu03](https://github.com/hemanshu03). Find LiveDict on GitHub @[LiveDict](https://github.com/hemanshu03/LiveDict)
 
 ---
 
