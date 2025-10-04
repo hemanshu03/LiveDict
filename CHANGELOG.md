@@ -2,33 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project follows Semantic Versioning.
-
-## Release: [v1.0.4] - 2025-08-11
-
+## [2.0.0] - 2025-10-04
 ### Added
-* Pydantic-based configuration models for storage/backends/monitoring and bucket policies.
-* New persistence backends:
-  - SQLite backend with short-lived connections and indexing.
-  - File-backed object store for external object storage emulation.
-  - Improved InMemory backend used for testing and simple runs.
-* CipherAdapter with AES-GCM (cryptography) and deterministic base64 XOR fallback.
-* Heap-based expiry monitor with efficient wake-ups and rebuild heuristics.
-* Bucket semantics, bucket policies, and hybrid routing placeholders.
-* Better backend fallbacks and tolerant lookup behavior (any-bucket fallback for SQLite/File).
-* Expanded API and documentation covering rotation, hooks, and persistence options.
+- Comprehensive Google-style docstrings added to modules, classes, and functions.
+- Sandbox functionality is now active and maintained within the package.
 
 ### Changed
-* Packaging bumped to `1.0.4-release` to mark the release-ready core implementation.
-* README and packaging metadata updated to reflect new dependencies and features.
+- Project version bumped to `2.0.0`.
+- Packaging files (`setup.py`, `pyproject.toml`) updated for PyPI release.
 
-### Fixed
-* Backend expiry handling improved to avoid stale reads.
-* sqlite backend uses short-lived sqlite3 connections to avoid file locks on Windows.
-* File backend tolerant lookup fixes and safer cleanup logic.
+### Removed
+- Cryptography-related code has been removed from the package. Encryption and cryptographic responsibilities are now delegated to the user; the library no longer provides built-in cryptographic primitives.
 
----
-
-## Prior patch notes (v1.0.4 and earlier)
-No previous changes. This is the first version of LiveDict's official release.
+### Notes
+- The `sandbox` module is live and behaves according to the code in this release; users should review sandbox behavior for their environment and use cases.
