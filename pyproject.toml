@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "livedict"
-version = "1.0.4"
-description = "Encrypted TTL-based key-value store with sandboxed hooks and optional persistence backends (SQLite/File/Redis)."
+version = "2.0.0"
+description = "TTL-based key-value store with sandboxed hooks and (optionally) persistence backends (SQLite/Memory/Redis)."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"] 
@@ -13,10 +13,8 @@ authors = [
     { name = "Hemanshu Vaidya", email = "hemanshuvaidya64@gmail.com" }
 ]
 dependencies = [
-    "pydantic>=1.10",
-    "cryptography>=3.4",
     "redis>=4.0",
-    "typing-extensions>=4.0",
+    "sqlite3>=3.0",
 ]
 requires-python = ">=3.8"
 classifiers = [
@@ -34,9 +32,3 @@ minversion = "6.0"
 addopts = "-q"
 testpaths = ["tests"]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=8.0",
-    "pytest-asyncio>=0.23.0",
-    "pytest-cov>=4.0.0",
-]
