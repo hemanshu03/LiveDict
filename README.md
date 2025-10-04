@@ -49,7 +49,7 @@ pip install livedict
 
 ## Demonstration
 
-Visit [![testfile.py](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py)](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py) as a demonstration on how to use LiveDict.
+Visit [testfile.py](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py) as a demonstration on how to use LiveDict.
 
 ---
 
