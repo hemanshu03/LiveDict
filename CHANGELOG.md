@@ -16,3 +16,15 @@ All notable changes to this project will be documented in this file.
 
 ### Notes
 - The `sandbox` module is live and behaves according to the code in this release; users should review sandbox behavior for their environment and use cases.
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [2.0.1] - 2025-10-05
+### Changed
+- setup.py had a major requirement issue that was fixed. (I had mistakenly added sqlite3 as a requirement but it's not needed since Python 3.6+ has included it.)
+
+## [2.0.2] - 2025-10-05
+### Changed
+- The callback handler was calling the callbacks 2 times.I messed up by adding another loop if there is any RunTimeError at _run_async in the _trigger_event function.. fixed it.
