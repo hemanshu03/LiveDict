@@ -169,8 +169,7 @@ print(live.get('counter'))  # Updated safely
 
 See the repository examples:
 
-* [`test_sync.py`](https://github.com/hemanshu03/LiveDict/blob/main/test_sync.py)
-* [`test_async.py`](https://github.com/hemanshu03/LiveDict/blob/main/test_async.py)
+* [`testfile.py`](https://github.com/hemanshu03/LiveDict/blob/main/testfile.py)
 
 These demonstrate TTL, callbacks, sandbox safety, locking, and async concurrency.
 
