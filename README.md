@@ -1,5 +1,9 @@
-# LiveDict (Release v2.0.2)
+# LiveDict 
+Copyright (C) 2025 Hemanshu Vaidya
 
+Find a copy of license @[hemanshu03/LiveDict/LICENSE](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
+##
+# Release v2.0.2
 **TTL-based, Persistent / Ephemeral Python Dictionary with Hook Callbacks and Sandbox**
 
 LiveDict is a flexible, sandbox-aware, dictionary-like key-value store that supports both **synchronous** and **asynchronous** modes, **TTL-based expiry**, and **multiple backends** (memory, SQLite, Redis).
