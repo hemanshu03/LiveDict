@@ -224,7 +224,9 @@ Stop background expiry monitor.
 
 ## License
 
-MIT License
+GNU Affero General Public License v3.0 © 2025 Hemanshu Vaidya  
+[![GitHub license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
+
 
 ---
 
