@@ -37,9 +37,6 @@ exercise caution and review its behavior before running untrusted code.
 GNU Affero General Public License v3.0 © 2025 Hemanshu Vaidya  
 [![GitHub license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
 
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
-
 ## Installation
 
 Minimum supported Python: 3.8+
