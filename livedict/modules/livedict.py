@@ -352,19 +352,7 @@ class LiveDictImpl:
                         loop = asyncio.get_running_loop()
                         loop.create_task(_run_async(e, value))
                     except RuntimeError:
-
-                        def _runner():
-                            """_runner.
-
-Returns:
-    typing.Any: Description of return value."""
-                            loop2 = asyncio.new_event_loop()
-                            asyncio.set_event_loop(loop2)
-                            try:
-                                loop2.run_until_complete(_run_async(e, value))
-                            finally:
-                                loop2.close()
-                        self._executor.submit(_runner)
+                        self._executor.submit(lambda: asyncio.run(_run_async(e, value)))
                 else:
 
                     def _run_sync(cbentry: CallbackEntry, val: Any):

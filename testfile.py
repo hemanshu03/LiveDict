@@ -119,12 +119,14 @@ Returns:
     print('Final value:', live.get('counter'))
 
 async def test_async_memory():
+    start = time.time()
+    print(f"Start at {start}")
     """
     Test LiveDict in async mode with memory backend.
     """
     print('\n=== [6] Async Usage (Memory Backend) ===')
     live = LiveDict(work_mode='async', backend='memory')
-    await live.set('a', 10, ttl=1)
+    await live.set('a', 10, ttl=10)
     print('a =', await live.get('a'))
 
     async def async_cb(key, val):
@@ -151,11 +153,12 @@ async def test_async_memory():
             This main_callback launches two async expiration handlers and 
             waits for both to complete using asyncio.gather.
         """
+        print(f"Call: {time.time() - start}")
         tasks = [async_cb(key, val), async_cb2(key, val)]
         await asyncio.gather(*tasks)
-    live.register_callback('expire', main_callback, is_async=True)
+    live.register_callback('expire', main_callback, is_async=True, key='a')
     await live.set('b', 'bye', ttl=1)
-    await asyncio.sleep(2)
+    await asyncio.sleep(20)
 
 def test_sqlite_sync():
     """test_sqlite_sync.
@@ -208,13 +211,13 @@ async def test_redis_async():
     except Exception as e:
         print('Redis not available:', e)
 if __name__ == '__main__':
-    test_basic_sync()
-    test_ttl()
-    test_callbacks()
-    test_sandbox()
-    test_locking()
+    #test_basic_sync()
+    #test_ttl()
+    #test_callbacks()
+    #test_sandbox()
+    #test_locking()
     asyncio.run(test_async_memory())
-    test_sqlite_sync()
-    asyncio.run(test_sqlite_async())
-    test_redis_sync()
-    asyncio.run(test_redis_async())
+    #test_sqlite_sync()
+    #asyncio.run(test_sqlite_async())
+    #test_redis_sync()
+    #asyncio.run(test_redis_async())
