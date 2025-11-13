@@ -5,9 +5,9 @@
 LiveDict is a secure, extensible, and ephemeral key-value store designed for applications that need in-memory caching with optional persistence and encryption.
 
 ## License
-MIT License. © 2025 LiveDict. All rights reserved.
+GNU Affero General Public License v3.0 © 2025 Hemanshu Vaidya  
+[![GitHub license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hemanshu03/LiveDict/blob/main/LICENSE)
 
 ## Highlights
 * AES-GCM encryption (via `cryptography`) with a deterministic fallback for test environments.
@@ -78,7 +78,7 @@ See:
 ---
 
 ## About License:
-  - SPDX-License-Identifier: MIT
+  - SPDX-License-Identifier: GNU Affero Public License
   - Copyright (c) 2025 Hemanshu
 
 ---
