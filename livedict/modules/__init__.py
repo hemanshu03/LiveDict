@@ -1,8 +1,8 @@
-"""__init__.py — LiveDict v2 module.
+import warnings
 
-Module contains implementations for LiveDict core components."""
-from .livedict import LiveDict
-from .exceptions import LiveDictError, LockedKeyError, SandboxError
-from .sandbox import sandbox_wrap_sync, sandbox_wrap_async
-from .storage_backend import MemoryBackend, SQLiteBackend, RedisBackend
-__all__ = ['LiveDict', 'LiveDictError', 'LockedKeyError', 'SandboxError', 'sandbox_wrap_sync', 'sandbox_wrap_async', 'MemoryBackend', 'SQLiteBackend', 'RedisBackend']
+warnings.warn(
+    "LiveDict is discontinued and has been renamed to NimbusKV. "
+    "Please install `nimbuskv` and use `from nimbuskv import NimbusKV`.",
+    DeprecationWarning,
+    stacklevel=2,
+)
